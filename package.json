@@ -12,6 +12,9 @@
   "dependencies": {
     "@gsap/react": "^2.1.1",
     "@material-tailwind/react": "^2.1.9",
+    "contentful": "^10.13.1",
+    "dotenv": "^16.4.5",
+    "graphql-request": "^7.1.0",
     "gsap": "^3.12.5",
     "gsap-trial": "^3.12.5",
     "prop-types": "^15.8.1",

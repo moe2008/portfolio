@@ -4,12 +4,13 @@ import SiteWrapper from "../layout/SiteWrapper";
 import OtherNavbar from "../layout/Navbar/Other/OtherNavbar";
 import gsap from "gsap";
 import Slides from "../ui/Slides";
-import { Projects } from "../../helpers/Projects";
+import useContentfulData from "../../helpers/useContentfulData";
 
 const About = () => {
   const startXRef = useRef(0);
   const startYRef = useRef(0);
   const targetRef = useRef(0);
+  const { entries, loading, error } = useContentfulData();
 
   useEffect(() => {
     let target = 0;
@@ -86,11 +87,11 @@ const About = () => {
       slider.removeEventListener("touchstart", handleTouchStart);
       slider.removeEventListener("touchmove", handleTouchMove);
     };
-  }, []);
+  });
 
   return (
     <SiteWrapper>
-      <OtherNavbar name="Projects"/>
+      <OtherNavbar name="Projects" />
       <div className="marker-wrapper">
         <div className="marker bg-black dark:bg-white">
           <div className="grab"></div>
@@ -102,18 +103,20 @@ const About = () => {
       <div className="slider">
         <div className="slider-wrapper">
           <div className="text-black dark:text-white opacity-70">Scroll</div>
-          {Projects.map((project) => (
+          
+          {!loading && entries.map((project) => (
             <Slides
-              key={project.name}
-              projectName={project.name}
-              pic={project.pic}
-              react={project.techstack.react}
-              nextjs={project.techstack.nextjs}
-              chakra={project.techstack.chakra}
-              sanity={project.techstack.sanity}
-              stripe={project.techstack.stripe}
-              tailwind={project.techstack.tailwind}
-              firebase={project.techstack.firebase}
+              key={project.fields.name}
+              projectName={project.fields.name}
+              img={project.fields.image.fields.file.url}
+              react={project.fields.techStack.react}
+              chakra={project.fields.techStack.chakra}
+              firebase={project.fields.techStack.firebase}
+              stripe={project.fields.techStack.stripe}
+              nextjs={project.fields.techStack.next}
+              tailwind={project.fields.techStack.tailwind}
+              gitlink={project.fields.gitlink}
+              demolink={project.fields.demolink}
             />
           ))}
           <div className="text-black dark:text-white opacity-70">End</div>

@@ -20,7 +20,7 @@ const Slides = (props) => {
       </div>
       <div className="w-full h-full flex items-center justify-center">
         <div className="h-full imgContainer">
-          <img src={content} className="sm:w-2/3" />
+          <img src={props.img} className="sm:w-2/3" />
           <div className="colorOverlay"></div>
         </div>
       </div>
@@ -37,8 +37,8 @@ const Slides = (props) => {
           </span>
         </div>
         <div className="w-1/2 flex flex-row justify-evenly items-center dark:text-whiteMode-text">
-          <SliderButton text="Visit Github" classes="bg-accentColors-lila" />
-          <SliderButton text="Live Demo" classes="bg-accentColors-green" />
+          <SliderButton text="Visit Github" classes="bg-accentColors-lila" link={props.gitlink}/>
+          <SliderButton text="Live Demo" classes="bg-accentColors-green" link={props.demolink}/>
         </div>
       </div>
     </div>

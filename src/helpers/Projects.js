@@ -11,9 +11,11 @@ export const Projects = [
       tailwind: false,
       sanity: false,
     },
+    gitlink: "",
+    demolink: "",
   },
   {
-    name: "AI Logo Generator",
+    name: "Content AI",
     pic: "pic",
     techstack: {
       react: true,
@@ -24,6 +26,8 @@ export const Projects = [
       tailwind: true,
       sanity: false,
     },
+    gitlink: "",
+    demolink: "",
   },
   {
     name: "My Portfolio",
@@ -37,9 +41,11 @@ export const Projects = [
       tailwind: true,
       sanity: false,
     },
+    gitlink: "",
+    demolink: "",
   },
   {
-    name: "Decentralized Crowd Funding",
+    name: "DApp Crowdfunding",
     pic: "pic",
     techstack: {
       react: true,
@@ -50,6 +56,8 @@ export const Projects = [
       tailwind: true,
       sanity: false,
     },
+    gitlink: "",
+    demolink: "",
   },
   {
     name: "Chat App",
@@ -63,5 +71,7 @@ export const Projects = [
       tailwind: true,
       sanity: false,
     },
+    gitlink: "",
+    demolink: "",
   },
 ];
