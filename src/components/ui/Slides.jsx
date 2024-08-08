@@ -7,21 +7,20 @@ import ReactIcon from "../../assets/Icons/ReactIcon";
 import Firebase from "../../assets/Icons/Firebase";
 import NextJS from "../../assets/Icons/NextJs";
 import Sanity from "../../assets/Icons/Sanity";
-import Stripe from "../../assets/Icons/StripeIcon";
 import TailwindIcon from "../../assets/Icons/TailwindIcon";
 import PropTypes from "prop-types";
 import StripeIcon from "../../assets/Icons/StripeIcon";
 
 const Slides = (props) => {
-  const twClasses = "h-8 w-8 fill-white";
+  const twClasses = "sm:h-8 sm:w-8 h-4 w-4 fill-white";
   return (
     <div className="slide flex flex-col bg-slideBg dark:bg-slideBg">
       <div className="sliderHeader h-1/4 text-darkMode-text flex items-center justify-center">
-        <h1 className="font-Technor">{props.projectName}</h1>
+        <h1 className="font-Technor text-xl sm:text-4xl">{props.projectName}</h1>
       </div>
       <div className="w-full h-full flex items-center justify-center">
         <div className="h-full imgContainer">
-          <img src={content} className="w-2/3" />
+          <img src={content} className="sm:w-2/3" />
           <div className="colorOverlay"></div>
         </div>
       </div>

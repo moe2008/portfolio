@@ -8,7 +8,7 @@ import DarkModeToggle from "../DarkModeToggle";
 const Navbar = (props) => {
   return (
     <div
-      className="flex flex-row justify-evenly items-center h-1/6 w-full p-4"
+      className="flex flex-row justify-evenly items-center h-1/6 w-full sm:p-8 p-4"
     >
       <NavItem
         className="items-center justify-start h-full w-2/5"
