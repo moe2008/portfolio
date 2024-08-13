@@ -15,7 +15,7 @@ const Projects = () => {
 
   return (
     <>
-      <div className="w-screen min-h-screen sm:min-h-screen flex flex-col items-center bg-gray-300 dark:bg-darkMode-bg pb-8">
+      <div className="w-screen min-h-screen sm:min-h-96 flex flex-col items-center bg-gray-300 dark:bg-darkMode-bg pb-8">
         <AboutNavbar name="About"/>
         <AboutHeader />
       </div>

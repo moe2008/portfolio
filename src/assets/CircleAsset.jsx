@@ -4,7 +4,7 @@ const CircleAsset = () => {
       viewBox="0 0 933 763"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="overflow-visible sm:h-full"
+      className="overflow-visible md:h-4/5 sm:h-1/3"
     >
       <g className="circle" id="next">
         <circle cx="714" cy="163" r="95" fill="url(#paint0_linear_194_84)" />
