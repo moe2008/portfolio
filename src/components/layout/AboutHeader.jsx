@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import iam from "../../assets/aboutimg.jpg"
+import iam from "../../assets/aboutimg.jpg";
 
 export const AboutHeader = () => {
   return (
@@ -11,12 +11,11 @@ export const AboutHeader = () => {
           Full Stack Developer
         </h1>
         <h1 className="text-2xl text-whiteMode-text dark:text-darkMode-text font-Supreme aboutText">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut
-          viverra justo, vitae tincidunt quam. Cras porttitor ipsum id ultrices
-          luctus. Curabitur sagittis nisi urna, id aliquam ex consectetur ut.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut
-          viverra justo, vitae tincidunt quam. Cras porttitor ipsum id ultrices
-          luctus. Curabitur sagittis nisi urna, id aliquam ex consectetur ut.
+          I specialize in modern Fullstack Development using the MERN stack,
+          creating dynamic web applications with seamless user experiences. My
+          expertise also extends to crafting engaging animations with GSAP,
+          bringing websites to life with smooth, interactive motion. Let's build
+          something exceptional together.
         </h1>
       </div>
       <div className="order-1 lg:order-2 h-full w-full md:w-1/2 lg:w-2/5 flex items-center ">
