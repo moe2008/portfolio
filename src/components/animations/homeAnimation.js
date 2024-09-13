@@ -1,10 +1,16 @@
 import gsap from "gsap";
-import ScrambleTextPlugin from "gsap-trial/ScrambleTextPlugin";
-
-gsap.registerPlugin(ScrambleTextPlugin);
 
 export const homeAnimation = () => {
   const tl = gsap.timeline();
+  const letters = "abcdefghijklmnopqrstuvwxyz";
+  const targetText = "modev";
+  const element = document.getElementById("text");
+
+  let randomChars = Array(targetText.length).fill("");
+ 
+  let lastUpdateTimes = Array(targetText.length).fill(0);
+
+  const scrambleInterval = 0.1; 
 
   tl.fromTo(
     "#preloaderContainer",
@@ -45,16 +51,40 @@ export const homeAnimation = () => {
         });
       },
     }
-  ).to("#text", {
-    duration: 2.5,
-    delay: 3,
-    scrambleText: {
-      text: "modev",
-      chars: "abcdefghiklmnopqrstuvwxyz",
-      revealDelay: 0.5,
-      speed: 0.3,
-      newClass: "myClass",
-    },
-    ease: "Power0.easeInOut",
-  });
+  ).to(
+    { scrambleProgress: 0 },
+    {
+      scrambleProgress: 1,
+      duration: 2.5,
+      delay: 3,
+      ease: "none",
+      onUpdate: function () {
+        const progress = this.targets()[0].scrambleProgress;
+        const currentTime = this.time(); // Aktuelle Zeit der Animation
+        const output = targetText
+          .split("")
+          .map((char, i) => {
+            if (i < Math.floor(targetText.length * progress)) {
+              // Wenn der Buchstabe "enthüllt" wurde, zeigen wir den Zielbuchstaben an
+              return targetText[i];
+            } else {
+              // Überprüfen, ob genug Zeit vergangen ist, um den Buchstaben zu aktualisieren
+              if (currentTime - lastUpdateTimes[i] >= scrambleInterval) {
+                // Aktualisieren des zufälligen Buchstabens und der letzten Aktualisierungszeit
+                randomChars[i] =
+                  letters[Math.floor(Math.random() * letters.length)];
+                lastUpdateTimes[i] = currentTime;
+              }
+              // Rückgabe des aktuellen zufälligen Buchstabens
+              return randomChars[i];
+            }
+          })
+          .join("");
+        element.textContent = output;
+      },
+      onComplete: function () {
+        element.textContent = targetText;
+      },
+    }
+  );
 };
