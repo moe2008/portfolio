@@ -6,6 +6,8 @@ import Cursor from "./components/ui/Cursor";
 import { Routes, Route } from "react-router-dom";
 import TransitionSite from "./components/animations/TransitionSite";
 import Projects from "./components/sites/Projects";
+import NotFound from "./components/sites/NotFound";
+import Contact from "./components/sites/Contact";
 
 function App() {
   return (
@@ -34,6 +36,22 @@ function App() {
           element={
             <TransitionSite>
               <Projects />
+            </TransitionSite>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <TransitionSite>
+              <Contact />
+            </TransitionSite>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <TransitionSite>
+              <NotFound />
             </TransitionSite>
           }
         />

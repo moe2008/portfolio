@@ -9,6 +9,7 @@ const TransitionSite = ({ children }) => {
       <SwitchTransition>
         <Transition
           key={location.pathname}
+          appear
           timeout={500}
           onEnter={(node) => {
             gsap.set(node, { autoAlpha: 0, scale: 0.8, xPercent: -100 });
