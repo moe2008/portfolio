@@ -62,11 +62,11 @@ const Header = (props) => {
           modev
         </h1>
       </div>
-      <div className="flex absolute top-70p left-1/2 -translate-y-2/4 -translate-x-1/2 gap-4 sm:gap-12 font-Technor">
+      <div className="flex absolute top-70p left-1/2 -translate-y-2/4 -translate-x-1/2 gap-1 sm:gap-12 font-Technor">
         <div className="p-2" id={props.id}>
           <Link to="/about">
             <h1
-              className="text-3xl sm:text-4xl select-none dark:text-darkMode-text text-whiteMode-text scaleAnim cursor-none"
+              className="text-2xl sm:text-4xl select-none dark:text-darkMode-text text-whiteMode-text scaleAnim cursor-none"
               onMouseEnter={onNavItemEnter}
               onMouseLeave={onNavItemLeave}
               id={props.id}
@@ -78,7 +78,7 @@ const Header = (props) => {
         <div className="p-2" id={props.id}>
           <Link to="/projects">
             <h1
-              className="text-3xl sm:text-4xl select-none dark:text-darkMode-text text-whiteMode-text scaleAnim cursor-none"
+              className="text-2xl sm:text-4xl select-none dark:text-darkMode-text text-whiteMode-text scaleAnim cursor-none"
               onMouseEnter={onNavItemEnter}
               onMouseLeave={onNavItemLeave}
               id={props.id}
@@ -90,7 +90,7 @@ const Header = (props) => {
         <div className="p-2">
           <Link to="/contact">
             <h1
-              className="text-3xl sm:text-4xl select-none dark:text-darkMode-text text-whiteMode-text scaleAnim cursor-none"
+              className="text-2xl sm:text-4xl select-none dark:text-darkMode-text text-whiteMode-text scaleAnim cursor-none"
               onMouseEnter={onNavItemEnter}
               onMouseLeave={onNavItemLeave}
               id={props.id}

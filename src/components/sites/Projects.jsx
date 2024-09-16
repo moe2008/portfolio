@@ -77,10 +77,11 @@ const About = () => {
     }
 
     function handleTouchMove(e) {
+      const touchSensity = 4;
       const dx = e.touches[0].clientX - startXRef.current;
       const dy = e.touches[0].clientY - startYRef.current;
 
-      target = targetRef.current - dx;
+      target = targetRef.current - dx * touchSensity;
       target = Math.max(0, target);
       target = Math.min(maxScroll, target);
     }
