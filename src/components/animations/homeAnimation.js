@@ -21,7 +21,7 @@ export const homeAnimation = () => {
         gsap.to("#LogoSVG3", {
           transformOrigin: "center center",
           rotate: 360,
-          duration: 0.1,
+          duration: 1,
           stagger: 0.2,
           repeat: 1,
           onComplete: () => {
@@ -38,12 +38,12 @@ export const homeAnimation = () => {
                 gsap.fromTo(
                   "#navbar",
                   { opacity: 0, y: 20 },
-                  { opacity: 1, y: 0, duration: 1, stagger: 0.2 }
+                  { opacity: 1, y: 0, duration: 2, stagger: 0.2 }
                 );
                 gsap.fromTo(
                   "#header",
                   { opacity: 0, y: 20 },
-                  { opacity: 1, y: 0, duration: 1, stagger: 0.3 }
+                  { opacity: 1, y: 0, duration: 2, stagger: 0.3 }
                 );
               },
             });
