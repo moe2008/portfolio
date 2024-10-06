@@ -21,7 +21,7 @@ export const homeAnimation = () => {
         gsap.to("#LogoSVG3", {
           transformOrigin: "center center",
           rotate: 360,
-          duration: 1,
+          duration: 0.3,
           stagger: 0.2,
           repeat: 1,
           onComplete: () => {
