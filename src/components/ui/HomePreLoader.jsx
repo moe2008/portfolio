@@ -6,7 +6,6 @@ const HomePreLoader = () => {
       id="preloaderContainer"
       className="flex w-full h-full items-center justify-center"
     >
-      <h1>Moin</h1>
       <LogoSVG
         className="dark:fill-darkMode-text fill-whiteMode-text h-"
         height="w-80 h-80 md:h-96 md:w-96"
