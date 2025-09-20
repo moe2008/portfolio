@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>AB Test</title>
+  <g>
+    <rect y="2" width="12" height="16" fill="#468ff1"/>
+    <rect x="12" y="8" width="12" height="16" fill="#61c5fa"/>
+    <rect width="12" height="4" fill="#3870cf"/>
+    <path d="M6,6a4,4,0,0,0-4,4v6H4V14H8v2h2V10A4,4,0,0,0,6,6ZM4,12V10a2,2,0,0,1,4,0v2Z" fill="#fff"/>
+    <rect x="12" y="6" width="12" height="4" fill="#3870cf"/>
+    <path d="M19,12H14V22h5a2.992,2.992,0,0,0,2.22-5A2.992,2.992,0,0,0,19,12Zm-3,2h3a1,1,0,0,1,0,2H16Zm3,6H16V18h3a1,1,0,0,1,0,2Z" fill="#fff"/>
+    <rect x="1" y="1" width="2" height="2" fill="#fff"/>
+    <rect x="13" y="7" width="2" height="2" fill="#fff"/>
+    <rect x="14" width="5" height="2" fill="#6dedd4"/>
+    <rect x="17" width="2" height="5" fill="#6dedd4"/>
+    <rect x="5" y="22" width="5" height="2" transform="translate(15 46) rotate(180)" fill="#6dedd4"/>
+    <rect x="5" y="19" width="2" height="5" transform="translate(12 43) rotate(180)" fill="#6dedd4"/>
+  </g>
+</svg>

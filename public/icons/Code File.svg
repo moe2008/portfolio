@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>Code File</title>
+  <g>
+    <polygon points="23 4 23 24 3 24 3 0 19 0 23 4" fill="#61c5fa"/>
+    <polygon points="9.293 19.707 5.586 16 9.293 12.293 10.707 13.707 8.414 16 10.707 18.293 9.293 19.707" fill="#fff"/>
+    <polygon points="16.707 19.707 15.293 18.293 17.586 16 15.293 13.707 16.707 12.293 20.414 16 16.707 19.707" fill="#fff"/>
+    <rect x="7.901" y="15" width="10.198" height="2" transform="translate(-5.241 25.606) rotate(-78.679)" fill="#fff"/>
+    <polygon points="23 4 19 4 19 0 23 4" fill="#468ff1"/>
+    <rect x="1" y="4" width="9" height="4" fill="#6dedd4"/>
+  </g>
+</svg>

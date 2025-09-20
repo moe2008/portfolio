@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>Layer</title>
+  <g>
+    <rect width="24" height="20" fill="#61c5fa"/>
+    <rect x="8" y="20" width="8" height="2" fill="#468ff1"/>
+    <rect x="5" y="22" width="14" height="2" fill="#3870cf"/>
+    <rect x="2" y="2" width="20" height="16" fill="#fff"/>
+    <polygon points="19 13 12 16 5 13 12 10 19 13" fill="#3870cf"/>
+    <polygon points="19 10 12 13 5 10 12 7 19 10" fill="#468ff1"/>
+    <polygon points="19 7 12 10 5 7 12 4 19 7" fill="#6dedd4"/>
+  </g>
+</svg>

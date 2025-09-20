@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>Web Programing</title>
+  <g>
+    <rect width="24" height="6" fill="#6dedd4"/>
+    <rect y="6" width="24" height="18" fill="#61c5fa"/>
+    <path d="M9,21H8.5A3.5,3.5,0,0,1,5,17.5,1.5,1.5,0,0,0,3.5,16H3V14h.5A1.5,1.5,0,0,0,5,12.5,3.5,3.5,0,0,1,8.5,9H9v2H8.5A1.5,1.5,0,0,0,7,12.5,3.487,3.487,0,0,1,5.947,15,3.487,3.487,0,0,1,7,17.5,1.5,1.5,0,0,0,8.5,19H9Z" fill="#fff"/>
+    <path d="M15.5,21H15V19h.5A1.5,1.5,0,0,0,17,17.5,3.487,3.487,0,0,1,18.053,15,3.487,3.487,0,0,1,17,12.5,1.5,1.5,0,0,0,15.5,11H15V9h.5A3.5,3.5,0,0,1,19,12.5,1.5,1.5,0,0,0,20.5,14H21v2h-.5A1.5,1.5,0,0,0,19,17.5,3.5,3.5,0,0,1,15.5,21Z" fill="#fff"/>
+    <rect x="9" y="14" width="2" height="2" fill="#fff"/>
+    <rect x="13" y="14" width="2" height="2" fill="#fff"/>
+    <rect x="2" y="2" width="2" height="2" fill="#fff"/>
+    <rect x="6" y="2" width="2" height="2" fill="#fff"/>
+    <rect x="10" y="2" width="2" height="2" fill="#fff"/>
+  </g>
+</svg>

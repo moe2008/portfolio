@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>Laptop Coding</title>
+  <g>
+    <rect x="1" y="1" width="22" height="18" fill="#61c5fa"/>
+    <path d="M0,19H24a0,0,0,0,1,0,0v2a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V19A0,0,0,0,1,0,19Z" fill="#468ff1"/>
+    <rect x="3" y="3" width="18" height="14" fill="#fff"/>
+    <polygon points="8.293 12.707 5.586 10 8.293 7.293 9.707 8.707 8.414 10 9.707 11.293 8.293 12.707" fill="#6dedd4"/>
+    <polygon points="15.707 12.707 14.293 11.293 15.586 10 14.293 8.707 15.707 7.293 18.414 10 15.707 12.707" fill="#6dedd4"/>
+    <rect x="7.877" y="9" width="8.246" height="2" transform="translate(-0.613 19.215) rotate(-75.957)" fill="#6dedd4"/>
+    <rect x="9" y="19" width="6" height="2" fill="#3870cf"/>
+  </g>
+</svg>

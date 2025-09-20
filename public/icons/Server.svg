@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>Server</title>
+  <g>
+    <rect y="8" width="20" height="6" fill="#468ff1"/>
+    <rect width="20" height="6" fill="#61c5fa"/>
+    <rect x="1" y="6" width="18" height="2" fill="#3870cf"/>
+    <rect x="1" y="14" width="18" height="2" fill="#3870cf"/>
+    <circle cx="3" cy="3" r="1" fill="#fff"/>
+    <circle cx="7" cy="3" r="1" fill="#fff"/>
+    <circle cx="3" cy="11" r="1" fill="#fff"/>
+    <circle cx="7" cy="11" r="1" fill="#fff"/>
+    <circle cx="16" cy="16" r="8" fill="#6dedd4"/>
+    <polygon points="12.293 18.707 9.586 16 12.293 13.293 13.707 14.707 12.414 16 13.707 17.293 12.293 18.707" fill="#fff"/>
+    <polygon points="19.707 18.707 18.293 17.293 19.586 16 18.293 14.707 19.707 13.293 22.414 16 19.707 18.707" fill="#fff"/>
+    <rect x="11.877" y="15" width="8.246" height="2" transform="translate(-3.404 27.639) rotate(-75.957)" fill="#fff"/>
+  </g>
+</svg>

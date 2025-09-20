@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>Coding binary</title>
+  <g>
+    <rect width="24" height="20" fill="#61c5fa"/>
+    <rect x="8" y="20" width="8" height="2" fill="#468ff1"/>
+    <rect x="5" y="22" width="14" height="2" fill="#3870cf"/>
+    <rect x="2" y="2" width="20" height="16" fill="#fff"/>
+    <polygon points="7 14 5 14 5 8 4 8 4 6 7 6 7 14" fill="#6dedd4"/>
+    <polygon points="20 14 18 14 18 8 17 8 17 6 20 6 20 14" fill="#6dedd4"/>
+    <path d="M15,14H9V6h6Zm-4-2h2V8H11Z" fill="#6dedd4"/>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>Search Coding</title>
+  <g>
+    <rect x="19.086" y="16.964" width="2.828" height="7.071" transform="translate(-8.491 20.5) rotate(-45)" fill="#61c5fa"/>
+    <rect x="14.879" y="14.879" width="4.243" height="4.243" transform="translate(-7.042 17) rotate(-45)" fill="#3870cf"/>
+    <circle cx="10" cy="10" r="10" fill="#468ff1"/>
+    <circle cx="10" cy="10" r="8" fill="#fff"/>
+    <path d="M9,15H8a3,3,0,0,1-3-3,1,1,0,0,0-1-1V9A1,1,0,0,0,5,8,3,3,0,0,1,8,5H9V7H8A1,1,0,0,0,7,8a2.987,2.987,0,0,1-.766,2A2.987,2.987,0,0,1,7,12a1,1,0,0,0,1,1H9Z" fill="#6dedd4"/>
+    <path d="M12,15H11V13h1a1,1,0,0,0,1-1,2.987,2.987,0,0,1,.766-2A2.987,2.987,0,0,1,13,8a1,1,0,0,0-1-1H11V5h1a3,3,0,0,1,3,3,1,1,0,0,0,1,1v2a1,1,0,0,0-1,1A3,3,0,0,1,12,15Z" fill="#6dedd4"/>
+  </g>
+</svg>

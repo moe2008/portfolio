@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>Algorithm</title>
+  <g>
+    <polygon points="24 21 14 21 14 19 22 19 22 12 19 12 19 10 24 10 24 21" fill="#468ff1"/>
+    <polygon points="6 12 0 12 0 2 6 2 6 4 2 4 2 10 6 10 6 12" fill="#468ff1"/>
+    <rect x="4" width="16" height="6" fill="#61c5fa"/>
+    <rect x="4" y="8" width="16" height="6" fill="#6dedd4"/>
+    <polygon points="20 20 12 24 4 20 12 16 20 20" fill="#61c5fa"/>
+    <rect x="7" y="2" width="10" height="2" fill="#fff"/>
+    <rect x="7" y="10" width="10" height="2" fill="#fff"/>
+    <rect x="10" y="19" width="4" height="2" fill="#fff"/>
+  </g>
+</svg>

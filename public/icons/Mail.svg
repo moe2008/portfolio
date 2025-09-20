@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>Mail</title>
+  <g>
+    <rect y="10" width="24" height="14" fill="#468ff1"/>
+    <polygon points="24 10 12 17 0 10 12 3 24 10" fill="#3870cf"/>
+    <polygon points="24 10 12 17 0 10 12 3 24 10" fill="#3870cf"/>
+    <polygon points="21 0 21 11.75 12 17 3 11.75 3 0 21 0" fill="#6dedd4"/>
+    <polygon points="8.293 9.707 5.586 7 8.293 4.293 9.707 5.707 8.414 7 9.707 8.293 8.293 9.707" fill="#fff"/>
+    <polygon points="15.707 9.707 14.293 8.293 15.586 7 14.293 5.707 15.707 4.293 18.414 7 15.707 9.707" fill="#fff"/>
+    <rect x="7.877" y="6" width="8.246" height="2" transform="translate(2.297 16.943) rotate(-75.957)" fill="#fff"/>
+    <polygon points="23 24 1 24 12 15 23 24" fill="#61c5fa"/>
+  </g>
+</svg>

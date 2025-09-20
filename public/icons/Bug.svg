@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>Bug</title>
+  <g>
+    <polygon points="24 0 24 6 0 6 0 0 17 0 19 2 19 0 24 0" fill="#6dedd4"/>
+    <polygon points="22 8 20 10 22 10 23 11 24 11 24 24 0 24 0 20 2 21 3 19 1 19 0 18 0 6 24 6 24 8 22 8" fill="#61c5fa"/>
+    <rect x="2" y="2" width="2" height="2" fill="#fff"/>
+    <rect x="6" y="2" width="2" height="2" fill="#fff"/>
+    <rect x="10" y="2" width="2" height="2" fill="#fff"/>
+    <rect x="6.5" y="11.197" width="2" height="3.606" transform="translate(-7.477 12.029) rotate(-56.31)" fill="#3870cf"/>
+    <rect x="5" y="16" width="4" height="2" fill="#3870cf"/>
+    <rect x="5.919" y="19.5" width="3.162" height="1.999" transform="translate(-6.103 3.428) rotate(-18.453)" fill="#3870cf"/>
+    <rect x="14.697" y="12" width="3.606" height="2" transform="translate(-4.44 11.336) rotate(-33.69)" fill="#3870cf"/>
+    <rect x="15" y="16" width="4" height="2" fill="#3870cf"/>
+    <rect x="15.5" y="18.919" width="1.999" height="3.162" transform="translate(-8.166 29.671) rotate(-71.565)" fill="#3870cf"/>
+    <path d="M12,22a4,4,0,0,1-4-4V12h8v6A4,4,0,0,1,12,22Z" fill="#468ff1"/>
+    <path d="M14,12H10V11a2,2,0,0,1,4,0Z" fill="#3870cf"/>
+  </g>
+</svg>
