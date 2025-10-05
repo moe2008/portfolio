@@ -1,25 +1,101 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Target, Zap, Rocket, Github, Linkedin, Twitter } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactSection = ({ currentLang }) => {
   const [sendMessage, setSendMessage] = useState("");
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [captchaValue, setCaptchaValue] = useState(null);
+  const [lastSubmit, setLastSubmit] = useState(0);
+  const recaptchaRef = useRef(null);
+
+  const validateForm = (data) => {
+    // Prüfe auf verdächtige Zeichen
+    const suspiciousPatterns = /[<>{}[\]\\]/;
+
+    if (
+      suspiciousPatterns.test(data.name) ||
+      suspiciousPatterns.test(data.project)
+    ) {
+      return false;
+    }
+
+    // Mindestlänge für Projekt-Beschreibung
+    if (data.project.length < 10) {
+      return false;
+    }
+
+    // E-Mail-Format prüfen
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(data.email)) {
+      return false;
+    }
+
+    return true;
+  };
+
   const sendEmail = (e) => {
     e.preventDefault();
+
+    // Rate Limiting: 5 Sekunden zwischen Anfragen
+    const now = Date.now();
+    if (now - lastSubmit < 5000) {
+      setError(true);
+      setSendMessage(
+        currentLang === "de"
+          ? "Bitte warte einen Moment vor dem nächsten Versuch."
+          : "Please wait a moment before trying again."
+      );
+      return;
+    }
+
+    // CAPTCHA-Prüfung
+    if (!captchaValue) {
+      setError(true);
+      setSendMessage(
+        currentLang === "de"
+          ? "Bitte bestätige, dass du kein Roboter bist."
+          : "Please confirm you're not a robot."
+      );
+      return;
+    }
+
     setIsLoading(true);
     setSendMessage("");
     setError(false);
 
-    // FormData direkt aus dem Form-Element erstellen
+    // FormData erstellen
     const formData = new FormData(e.target);
+
+    // Honeypot-Prüfung
+    const honeypot = formData.get("honeypot");
+    if (honeypot) {
+      console.log("Bot detected via honeypot");
+      setIsLoading(false);
+      return;
+    }
+
     const templateParams = {
       name: formData.get("name"),
       email: formData.get("email"),
       project: formData.get("project"),
       budget: formData.get("budget"),
+      "g-recaptcha-response": captchaValue,
     };
+
+    // Validierung
+    if (!validateForm(templateParams)) {
+      setError(true);
+      setSendMessage(
+        currentLang === "de"
+          ? "Bitte fülle alle Felder korrekt aus. Die Projektbeschreibung muss mindestens 10 Zeichen lang sein."
+          : "Please fill out all fields correctly. Project description must be at least 10 characters long."
+      );
+      setIsLoading(false);
+      return;
+    }
 
     console.log("Sending data:", templateParams);
 
@@ -34,16 +110,25 @@ const ContactSection = ({ currentLang }) => {
         (result) => {
           console.log("SUCCESS!", result.text);
           setSendMessage(
-            "Nachricht erfolgreich gesendet! Ich melde mich innerhalb von 24h bei Ihnen."
+            currentLang === "de"
+              ? "Nachricht erfolgreich gesendet! Ich melde mich innerhalb von 24h bei Ihnen."
+              : "Message sent successfully! I'll get back to you within 24 hours."
           );
           setError(false);
-          e.target.reset(); // Formular zurücksetzen
+          setLastSubmit(now);
+          e.target.reset();
+          setCaptchaValue(null);
+          if (recaptchaRef.current) {
+            recaptchaRef.current.reset();
+          }
         },
         (error) => {
           console.log("ERROR:", error.text);
           setError(true);
           setSendMessage(
-            "Fehler beim Senden. Bitte versuchen Sie es erneut oder kontaktieren Sie mich direkt."
+            currentLang === "de"
+              ? "Fehler beim Senden. Bitte versuchen Sie es erneut oder kontaktieren Sie mich direkt."
+              : "Error sending message. Please try again or contact me directly."
           );
         }
       )
@@ -51,6 +136,7 @@ const ContactSection = ({ currentLang }) => {
         setIsLoading(false);
       });
   };
+
   return (
     <section
       id="contact"
@@ -76,8 +162,8 @@ const ContactSection = ({ currentLang }) => {
                   : "Tell me about your idea. Together we'll find the best way to implement it."}
               </p>
             </div>
-            {/* Contact Info Cards */}
 
+            {/* Contact Info Cards */}
             <div className="space-y-4">
               {[
                 {
@@ -147,6 +233,7 @@ const ContactSection = ({ currentLang }) => {
                 );
               })}
             </div>
+
             {/* Social Links */}
             <div className="pt-8 fade-in stagger-5">
               <p className="text-gray-400 mb-4">
@@ -196,6 +283,19 @@ const ContactSection = ({ currentLang }) => {
                 className="space-y-6 fade-in stagger-6"
                 onSubmit={sendEmail}
               >
+                {/* Honeypot Field - versteckt für Bots */}
+                <div
+                  style={{ position: "absolute", left: "-5000px" }}
+                  aria-hidden="true"
+                >
+                  <input
+                    type="text"
+                    name="honeypot"
+                    tabIndex="-1"
+                    autoComplete="off"
+                  />
+                </div>
+
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label
@@ -276,27 +376,69 @@ const ContactSection = ({ currentLang }) => {
                   </select>
                 </div>
 
+                {/* reCAPTCHA */}
+                <div className="flex justify-center">
+                  <ReCAPTCHA
+                    ref={recaptchaRef}
+                    sitekey="6LegDt8rAAAAANygJaoQPsi3YikZuacN_feV4a6n"
+                    onChange={(value) => setCaptchaValue(value)}
+                    onExpired={() => setCaptchaValue(null)}
+                    theme="dark"
+                  />
+                </div>
+
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-gray-900 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-400/25 relative overflow-hidden group"
+                  disabled={isLoading}
+                  className="w-full bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-gray-900 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-400/25 relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   <span className="relative z-10 flex items-center justify-center">
-                    <svg
-                      className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-200"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                      />
-                    </svg>
-                    {currentLang === "de"
-                      ? "Projekt anfragen"
-                      : "Start Project"}
+                    {isLoading ? (
+                      <>
+                        <svg
+                          className="animate-spin h-5 w-5 mr-2"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                          ></path>
+                        </svg>
+                        {currentLang === "de"
+                          ? "Wird gesendet..."
+                          : "Sending..."}
+                      </>
+                    ) : (
+                      <>
+                        <svg
+                          className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-200"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                          />
+                        </svg>
+                        {currentLang === "de"
+                          ? "Projekt anfragen"
+                          : "Start Project"}
+                      </>
+                    )}
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </button>

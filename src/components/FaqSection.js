@@ -10,6 +10,77 @@ import {
 } from "lucide-react";
 
 const FaqSection = ({ currentLang }) => {
+  const faqs = [
+    {
+      q:
+        currentLang === "de"
+          ? "Wie definieren wir den Projekt-Scope?"
+          : "How do we define the project scope?",
+      a:
+        currentLang === "de"
+          ? "Gemeinsame Discovery-Phase mit User Stories, technischen Requirements und klaren Akzeptanzkriterien. Agile Anpassungen sind jederzeit möglich."
+          : "Joint discovery phase with user stories, technical requirements and clear acceptance criteria. Agile adjustments are possible at any time.",
+      icon: Target,
+      color: "blue",
+    },
+    {
+      q:
+        currentLang === "de"
+          ? "Wie lange dauert ein typisches Projekt?"
+          : "How long does a typical project take?",
+      a:
+        currentLang === "de"
+          ? "MVP: 2-4 Wochen, vollständige SaaS-Lösung: 6-12 Wochen. Abhängig von Komplexität und Integrationen."
+          : "MVP: 2-4 weeks, complete SaaS solution: 6-12 weeks. Depending on complexity and integrations.",
+      icon: Clock,
+      color: "green",
+    },
+    {
+      q: currentLang === "de" ? "Wem gehört der Code?" : "Who owns the code?",
+      a:
+        currentLang === "de"
+          ? "Vollständige Code-Ownership liegt beim Kunden. Alle Repositories werden übertragen, keine Vendor-Lock-ins."
+          : "Complete code ownership lies with the customer. All repositories are transferred, no vendor lock-ins.",
+      icon: Lock,
+      color: "purple",
+    },
+    {
+      q:
+        currentLang === "de"
+          ? "Bieten Sie Wartung an?"
+          : "Do you offer maintenance?",
+      a:
+        currentLang === "de"
+          ? "Ja, flexible Wartungsverträge für Updates, Monitoring und Feature-Erweiterungen. Auch punktuelle Unterstützung möglich."
+          : "Yes, flexible maintenance contracts for updates, monitoring and feature extensions. Occasional support also possible.",
+      icon: Wrench,
+      color: "orange",
+    },
+    {
+      q:
+        currentLang === "de"
+          ? "Wie handhaben Sie SEO?"
+          : "How do you handle SEO?",
+      a:
+        currentLang === "de"
+          ? "Technisches SEO ist Standard: strukturierte Daten, Core Web Vitals, semantisches HTML. Content-SEO auf Wunsch."
+          : "Technical SEO is standard: structured data, Core Web Vitals, semantic HTML. Content SEO on request.",
+      icon: TrendingUp,
+      color: "emerald",
+    },
+    {
+      q:
+        currentLang === "de"
+          ? "Welche Hosting-Optionen gibt es?"
+          : "What hosting options are available?",
+      a:
+        currentLang === "de"
+          ? "Vercel, AWS, oder Ihre bevorzugte Plattform. Setup und Deployment-Pipeline inklusive."
+          : "Vercel, AWS, or your preferred platform. Setup and deployment pipeline included.",
+      icon: Cloud,
+      color: "cyan",
+    },
+  ];
   return (
     <section id="faq" className="py-20 px-6 border-t border-gray-800">
       <div className="max-w-4xl mx-auto">
@@ -18,80 +89,7 @@ const FaqSection = ({ currentLang }) => {
         </h2>
 
         <div className="space-y-4">
-          {[
-            {
-              q:
-                currentLang === "de"
-                  ? "Wie definieren wir den Projekt-Scope?"
-                  : "How do we define the project scope?",
-              a:
-                currentLang === "de"
-                  ? "Gemeinsame Discovery-Phase mit User Stories, technischen Requirements und klaren Akzeptanzkriterien. Agile Anpassungen sind jederzeit möglich."
-                  : "Joint discovery phase with user stories, technical requirements and clear acceptance criteria. Agile adjustments are possible at any time.",
-              icon: Target,
-              color: "blue",
-            },
-            {
-              q:
-                currentLang === "de"
-                  ? "Wie lange dauert ein typisches Projekt?"
-                  : "How long does a typical project take?",
-              a:
-                currentLang === "de"
-                  ? "MVP: 2-4 Wochen, vollständige SaaS-Lösung: 6-12 Wochen. Abhängig von Komplexität und Integrationen."
-                  : "MVP: 2-4 weeks, complete SaaS solution: 6-12 weeks. Depending on complexity and integrations.",
-              icon: Clock,
-              color: "green",
-            },
-            {
-              q:
-                currentLang === "de"
-                  ? "Wem gehört der Code?"
-                  : "Who owns the code?",
-              a:
-                currentLang === "de"
-                  ? "Vollständige Code-Ownership liegt beim Kunden. Alle Repositories werden übertragen, keine Vendor-Lock-ins."
-                  : "Complete code ownership lies with the customer. All repositories are transferred, no vendor lock-ins.",
-              icon: Lock,
-              color: "purple",
-            },
-            {
-              q:
-                currentLang === "de"
-                  ? "Bieten Sie Wartung an?"
-                  : "Do you offer maintenance?",
-              a:
-                currentLang === "de"
-                  ? "Ja, flexible Wartungsverträge für Updates, Monitoring und Feature-Erweiterungen. Auch punktuelle Unterstützung möglich."
-                  : "Yes, flexible maintenance contracts for updates, monitoring and feature extensions. Occasional support also possible.",
-              icon: Wrench,
-              color: "orange",
-            },
-            {
-              q:
-                currentLang === "de"
-                  ? "Wie handhaben Sie SEO?"
-                  : "How do you handle SEO?",
-              a:
-                currentLang === "de"
-                  ? "Technisches SEO ist Standard: strukturierte Daten, Core Web Vitals, semantisches HTML. Content-SEO auf Wunsch."
-                  : "Technical SEO is standard: structured data, Core Web Vitals, semantic HTML. Content SEO on request.",
-              icon: TrendingUp,
-              color: "emerald",
-            },
-            {
-              q:
-                currentLang === "de"
-                  ? "Welche Hosting-Optionen gibt es?"
-                  : "What hosting options are available?",
-              a:
-                currentLang === "de"
-                  ? "Vercel, AWS, oder Ihre bevorzugte Plattform. Setup und Deployment-Pipeline inklusive."
-                  : "Vercel, AWS, or your preferred platform. Setup and deployment pipeline included.",
-              icon: Cloud,
-              color: "cyan",
-            },
-          ].map((faq, index) => {
+          {faqs.map((faq, index) => {
             const IconComponent = faq.icon;
 
             return (

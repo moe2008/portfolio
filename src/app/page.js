@@ -9,6 +9,7 @@ import AboutSection from "@/components/AboutSection";
 import FaqSection from "@/components/FaqSection";
 import ContactSection from "@/components/ContactSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import FooterSection from "@/components/FooterSection";
 
 export default function HomePage() {
   const [currentLang, setCurrentLang] = useState("de");
@@ -60,8 +61,8 @@ export default function HomePage() {
           {/* Contact Section */}
           <ContactSection currentLang={currentLang} />
         </main>
-
         {/* Footer */}
+        <FooterSection currentLang={currentLang} />
       </div>
     </>
   );

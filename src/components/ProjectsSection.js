@@ -1,6 +1,177 @@
 import React from "react";
 
 const ProjectsSection = ({ currentLang }) => {
+  const projects = [
+    {
+      name: "eingutertipp.de",
+      category:
+        currentLang === "de"
+          ? "Lead & Empfehlungsmarketing"
+          : "Lead & Referral Marketing",
+      description:
+        currentLang === "de"
+          ? "Empfehlungsmarketing-Plattform die Unternehmen und Kunden intelligent vernetzt. Automatisches Lead-Routing und Performance-Tracking für nachhaltige Geschäftsbeziehungen."
+          : "Referral marketing platform that intelligently connects businesses and customers. Automated lead routing and performance tracking for sustainable business relationships.",
+      metrics: [
+        {
+          label: currentLang === "de" ? "Empfehlungen" : "Referrals",
+          value: "+340%",
+        },
+        {
+          label: currentLang === "de" ? "Kosten" : "Costs",
+          value: "-60%",
+        },
+      ],
+      tech: ["Next.js", "Node.js", "MongoDB", "Stripe", "Cloudinary", "AntD"],
+      icon: (
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M13 10V3L4 14h7v7l9-11h-7z"
+          />
+        </svg>
+      ),
+      color: "border-blue-500",
+    },
+    {
+      name: "Reebaq",
+      category:
+        currentLang === "de"
+          ? "AI Feedback Management"
+          : "AI Feedback Management",
+      description:
+        currentLang === "de"
+          ? "KI-gestütztes Feedback-Management mit automatischer Sentiment-Analyse und Smart-Gutschein-System. Verwandelt Kundenfeedback in actionable Insights und Retention-Strategien."
+          : "AI-powered feedback management with automatic sentiment analysis and smart voucher system. Transforms customer feedback into actionable insights and retention strategies.",
+      metrics: [
+        { label: "Response Rate", value: "+280%" },
+        {
+          label: currentLang === "de" ? "Auswertungszeit" : "Evaluation Time",
+          value: "-75%",
+        },
+      ],
+      tech: ["React", "OpenAI", "MongoDB", "Auth0", "n8n", "AntD"],
+      icon: (
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+          />
+        </svg>
+      ),
+      color: "border-purple-500",
+    },
+    {
+      name: "Proofly",
+      category:
+        currentLang === "de" ? "Social Proof Tool" : "Social Proof Tool",
+      description:
+        currentLang === "de"
+          ? "Live-Notification System für Websites mit Echtzeit-Analytics und einfacher Integration"
+          : "Live notification system for websites with real-time analytics and simple integration",
+      metrics: [
+        { label: "Conversion Rate", value: "+45%" },
+        {
+          label: currentLang === "de" ? "Verweildauer" : "Dwell Time",
+          value: "+120%",
+        },
+      ],
+      tech: ["Next.Js", "PostgreSQL", "Supabase", "Express", "Analytics Umami"],
+      icon: (
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 17h5l-5 5v-5zM4.828 7l2.828 2.828M9 3l3 3-3 3M4 17l5-5M20 7l-5 5"
+          />
+        </svg>
+      ),
+      color: "border-green-500",
+    },
+    {
+      name: "Dreamfundr",
+      category:
+        currentLang === "de"
+          ? "Dezentrale Funding-Plattform"
+          : "Decentralized Funding Platform",
+      description:
+        currentLang === "de"
+          ? "Ethereum-basierte Crowdfunding-Plattform mit Smart Contracts und transparenter Mittelverwendung"
+          : "Ethereum-based crowdfunding platform with smart contracts and transparent fund usage",
+      metrics: [
+        {
+          label: currentLang === "de" ? "Transparenz" : "Transparency",
+          value: "100%",
+        },
+        {
+          label: currentLang === "de" ? "Gebühren gespart" : "Fees Saved",
+          value: "90%",
+        },
+      ],
+      tech: ["React", "Ethereum", "Solidity", "Web3.js", "IPFS"],
+      icon: (
+        <svg
+          className="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+          />
+        </svg>
+      ),
+      color: "border-yellow-500",
+    },
+  ];
+
+  const funprojects = [
+    {
+      name: "Pokemon Soullink Dashboard",
+      desc:
+        currentLang === "de"
+          ? "Interaktives Dashboard für Pokemon Soullink Challenges mit Team-Management und Statistiken"
+          : "Interactive dashboard for Pokemon Soullink challenges with team management and statistics",
+      tech: ["React", "Pokemon API", "Chart.js"],
+      icon: "🎮",
+      status: "Live",
+      users: "2.3k",
+    },
+    {
+      name: "Chrome Extension Design Helper",
+      desc:
+        currentLang === "de"
+          ? "Browser-Extension für Designer mit Farbpaletten, Typografie-Tools und Layout-Hilfen"
+          : "Browser extension for designers with color palettes, typography tools and layout helpers",
+      tech: ["JavaScript", "Chrome API", "CSS"],
+      icon: "🎨",
+      status: "Beta",
+      users: "450",
+    },
+  ];
   return (
     <section id="projects" className="py-20 px-6 border-t border-gray-800">
       <div className="max-w-6xl mx-auto">
@@ -8,171 +179,7 @@ const ProjectsSection = ({ currentLang }) => {
           {currentLang === "de" ? "Erfolgreiche Projekte" : "Successfull SaaS"}
         </h2>
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          {[
-            {
-              name: "eingutertipp.de",
-              category:
-                currentLang === "de"
-                  ? "Lead & Empfehlungsmarketing"
-                  : "Lead & Referral Marketing",
-              description:
-                currentLang === "de"
-                  ? "Empfehlungsmarketing-Plattform die Unternehmen und Kunden intelligent vernetzt. Automatisches Lead-Routing und Performance-Tracking für nachhaltige Geschäftsbeziehungen."
-                  : "Referral marketing platform that intelligently connects businesses and customers. Automated lead routing and performance tracking for sustainable business relationships.",
-              metrics: [
-                {
-                  label: currentLang === "de" ? "Empfehlungen" : "Referrals",
-                  value: "+340%",
-                },
-                {
-                  label: currentLang === "de" ? "Kosten" : "Costs",
-                  value: "-60%",
-                },
-              ],
-              tech: [
-                "Next.js",
-                "Node.js",
-                "MongoDB",
-                "Stripe",
-                "Cloudinary",
-                "AntD",
-              ],
-              icon: (
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
-              ),
-              color: "border-blue-500",
-            },
-            {
-              name: "Reebaq",
-              category:
-                currentLang === "de"
-                  ? "AI Feedback Management"
-                  : "AI Feedback Management",
-              description:
-                currentLang === "de"
-                  ? "KI-gestütztes Feedback-Management mit automatischer Sentiment-Analyse und Smart-Gutschein-System. Verwandelt Kundenfeedback in actionable Insights und Retention-Strategien."
-                  : "AI-powered feedback management with automatic sentiment analysis and smart voucher system. Transforms customer feedback into actionable insights and retention strategies.",
-              metrics: [
-                { label: "Response Rate", value: "+280%" },
-                {
-                  label:
-                    currentLang === "de"
-                      ? "Auswertungszeit"
-                      : "Evaluation Time",
-                  value: "-75%",
-                },
-              ],
-              tech: ["React", "OpenAI", "MongoDB", "Auth0", "n8n", "AntD"],
-              icon: (
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                  />
-                </svg>
-              ),
-              color: "border-purple-500",
-            },
-            {
-              name: "Proofly",
-              category:
-                currentLang === "de"
-                  ? "Social Proof Tool"
-                  : "Social Proof Tool",
-              description:
-                currentLang === "de"
-                  ? "Live-Notification System für Websites mit Echtzeit-Analytics und einfacher Integration"
-                  : "Live notification system for websites with real-time analytics and simple integration",
-              metrics: [
-                { label: "Conversion Rate", value: "+45%" },
-                {
-                  label: currentLang === "de" ? "Verweildauer" : "Dwell Time",
-                  value: "+120%",
-                },
-              ],
-              tech: [
-                "Next.Js",
-                "PostgreSQL",
-                "Supabase",
-                "Express",
-                "Analytics Umami",
-              ],
-              icon: (
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 17h5l-5 5v-5zM4.828 7l2.828 2.828M9 3l3 3-3 3M4 17l5-5M20 7l-5 5"
-                  />
-                </svg>
-              ),
-              color: "border-green-500",
-            },
-            {
-              name: "Dreamfundr",
-              category:
-                currentLang === "de"
-                  ? "Dezentrale Funding-Plattform"
-                  : "Decentralized Funding Platform",
-              description:
-                currentLang === "de"
-                  ? "Ethereum-basierte Crowdfunding-Plattform mit Smart Contracts und transparenter Mittelverwendung"
-                  : "Ethereum-based crowdfunding platform with smart contracts and transparent fund usage",
-              metrics: [
-                {
-                  label: currentLang === "de" ? "Transparenz" : "Transparency",
-                  value: "100%",
-                },
-                {
-                  label:
-                    currentLang === "de" ? "Gebühren gespart" : "Fees Saved",
-                  value: "90%",
-                },
-              ],
-              tech: ["React", "Ethereum", "Solidity", "Web3.js", "IPFS"],
-              icon: (
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
-                  />
-                </svg>
-              ),
-              color: "border-yellow-500",
-            },
-          ].map((project, index) => (
+          {projects.map((project, index) => (
             <div
               key={index}
               className={`project-card p-8 rounded-lg ${
@@ -228,30 +235,7 @@ const ProjectsSection = ({ currentLang }) => {
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {[
-              {
-                name: "Pokemon Soullink Dashboard",
-                desc:
-                  currentLang === "de"
-                    ? "Interaktives Dashboard für Pokemon Soullink Challenges mit Team-Management und Statistiken"
-                    : "Interactive dashboard for Pokemon Soullink challenges with team management and statistics",
-                tech: ["React", "Pokemon API", "Chart.js"],
-                icon: "🎮",
-                status: "Live",
-                users: "2.3k",
-              },
-              {
-                name: "Chrome Extension Design Helper",
-                desc:
-                  currentLang === "de"
-                    ? "Browser-Extension für Designer mit Farbpaletten, Typografie-Tools und Layout-Hilfen"
-                    : "Browser extension for designers with color palettes, typography tools and layout helpers",
-                tech: ["JavaScript", "Chrome API", "CSS"],
-                icon: "🎨",
-                status: "Beta",
-                users: "450",
-              },
-            ].map((project, index) => (
+            {funprojects.map((project, index) => (
               <div
                 key={index}
                 className={`fun-project-card p-6 rounded-xl border border-gray-600 bg-gray-800/30 hover:bg-gray-800/50 hover:border-gray-500 transition-all duration-300 hover:scale-105 slide-in-${
