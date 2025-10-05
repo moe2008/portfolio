@@ -380,7 +380,7 @@ const ContactSection = ({ currentLang }) => {
                 <div className="flex justify-center">
                   <ReCAPTCHA
                     ref={recaptchaRef}
-                    sitekey="6LegDt8rAAAAANygJaoQPsi3YikZuacN_feV4a6n"
+                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                     onChange={(value) => setCaptchaValue(value)}
                     onExpired={() => setCaptchaValue(null)}
                     theme="dark"
