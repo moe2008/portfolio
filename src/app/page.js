@@ -42,7 +42,7 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="min-h-screen max-w-screen bg-gray-900 text-white">
+      <div className="min-h-screen w-full overflow-x-hidden bg-gray-900 text-white">
         <Navigation currentLang={currentLang} setCurrentLang={setCurrentLang} />
         <main>
           {/* Hero Section */}
